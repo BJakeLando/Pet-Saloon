@@ -12,11 +12,11 @@
     <header class="site-init">
         <h1>The Penguin Saloon</h1>
 
-        <nav class="navbar navbar-expand-lg bg-light">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="register.html">Register</a>
+        <nav>
+            <a class = "link" href="index.html">Home</a>
+            <a class = "link"  href="about.html">About</a>
+            <a class = "link"  href="services.html">Services</a>
+            <a class = "link"  href="register.html">Register</a>
         </nav>
 
     </header>
@@ -46,7 +46,7 @@
                 <input type="text" id="petBreed">
                 </div>
 
-                <div>
+                <div class="form-element">
                     <label>Service: </label>
                     <select id="petService">
                         <option value="" selection disabled>-- Select an option --</option>
@@ -56,22 +56,79 @@
                     </select>
                 </div>
 
-                <div>
+                <div class="form-element">
                     <label>Owners Name: </label>
                     <input type="text" id="ownerName">
 
                 </div>
 
-                <div>
+                <div class="form-element">
                     <label>Phone Number: </label>
                     <input type="number" id="phoneNumber">
                 </div>
 
-                <button onclick="register()">Register</button>
+                <button onclick="register();">Register</button>
+
 
             </div>
 
         </div>
+        <div id="pets">
+
+        </div>
+
+        <table id="petTable" onclick="register();">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Breed</th>
+                <th>Service</th>
+                <th>Owner's Name</th>
+                <th>Phone Number</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <div>
+                    <td>1</td>
+                    <td input type="text" id="petName"></td>
+                    </div>
+                <tr>
+                    <td>2</td>
+                    <td input type="number" id="petAge"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td input type="text" id="petBreed"></td>         
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td input type="text" id="petBreed"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td input type="text" id="petService"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td input type="text" id="ownerName"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td input type="number" id="phoneNumber"></td>
+                </tr>
+               
+
+
+
+                
+
+                </tr>
+            </tbody>
+        
+
+        </table>
 
         
     </main>
@@ -79,9 +136,7 @@
     <footer id="info">
 
     </footer>
-    
-
+    <script src="/scripts/display.js"></script>
     <script src="scripts/register.js"></script>
-
 </body>
 </html>

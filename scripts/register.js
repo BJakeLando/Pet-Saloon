@@ -29,6 +29,7 @@ function displaySalonInfo(){
     document.getElementById("info").innerHTML=`
 <p>${petSalon.name} is located in ${petSalon.address.state}, ${petSalon.address.city}</p>`;
 
+
 }
 // get the values from the inputs
 let nameInput=document.getElementById("petName");
@@ -39,19 +40,32 @@ let serviceSelect=document.getElementById("petService");
 let ownerInput=document.getElementById("ownerName");
 let phoneInput=document.getElementById("phoneNumber");
 
+function isValid(aPet){
+    let valid= true;
+    
+    if(aPet.value == "" || aPet.service==""){
+        valid=flase;
+    }
+
+    return valid;
+}
+
 
 function register(){
-    console.log(nameInput.value,ageInput.value,genderInput.value,breedInput.value)
+    console.log(nameInput.value,ageInput.value,genderInput.value,breedInput.value, serviceSelect.value, ownerInput.value, phoneInput.value);
 // create an obj using object constructor
     let thePet = new Pet(nameInput.value,ageInput.value,genderInput.value,breedInput.value, serviceSelect.value, ownerInput.value,
         phoneInput.value);
 
-// push the objectg in the array
-petSalon.pets.push(thePet);
-
-//display the obj in the console
-console.log(petSalon.pets);
-clearInputs();
+    // push the objectg in the array
+    if(isValid(thePet)){
+        petSalon.pets.push(thePet);
+        //display the obj in the console
+        clearInputs();
+        displayPetCards();
+    }else{
+        alert("Please add the required information.");
+    }
 }
 
 function clearInputs(){
@@ -74,8 +88,13 @@ function init(){
     "Grooming","Shaggy","555-555-5555");
     petSalon.pets.push(scrappy);
 
+    
     let sleepy = new Pet("Sleepy",2,"Male","Lab", "Grooming", "Brandon", "520-820-9498");
+    
     petSalon.pets.push(sleepy);
+
+    displayPetCards();
+
 
 }
 

@@ -17,6 +17,7 @@ header.site-init{
 }
 
 p{
+    line-height: 1.5;
 
 }
 
@@ -36,4 +37,37 @@ p{
 .navbar{
     color: aqua;
     width: 70px;
+}
+
+#pets {
+    display: grid;
+    grid-template-columns: repeat(3,1fr)
+}
+
+.pet {
+    background-color: #dedede;
+    border: 1px solid gray;
+    padding: 1 rem;
+    border-radius: 10px;
+
+}
+
+#petTable{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size:0.9em;
+    min-width: 600px;
+
+
+}
+
+#petTable thead tr {
+    background-color: #009879;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+#petTable th, td {
+    padding: 12px 15px;
 }
