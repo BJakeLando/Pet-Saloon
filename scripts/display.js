@@ -32,6 +32,9 @@ function displayPetCards() {
 }
 
 function displayPetTable(){
-    
+    const pets2Div = document.getElementById("pets");
+
+    pets2Div.innerHTML = "";
+
 
 }
