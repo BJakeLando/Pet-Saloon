@@ -52,7 +52,7 @@ p{
 
 }
 
-#petTable{
+#table-container{
     border-collapse: collapse;
     margin: 25px 0;
     font-size:0.9em;
@@ -61,13 +61,13 @@ p{
 
 }
 
-#petTable thead tr {
+#table-container thead tr {
     background-color: #009879;
     color: white;
     text-align: left;
     font-weight: bold;
 }
 
-#petTable th, td {
+#tabel-container th, td {
     padding: 12px 15px;
 }

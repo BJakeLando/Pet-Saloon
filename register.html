@@ -77,7 +77,12 @@
 
         </div>
 
-        <table id="petTable" onclick="register();">
+        <div>
+            <input type="search" id="petSearch">
+            <button onclick="search();" class="btn btn-primary">Search</button>
+        </div>
+
+        <table id="table-container">
             <thead>
                 <th>Name</th>
                 <th>Age</th>
@@ -86,48 +91,13 @@
                 <th>Service</th>
                 <th>Owner's Name</th>
                 <th>Phone Number</th>
+                <th>Actions</th>
             </thead>
 
-            <tbody>
-                <tr>
-                    <div>
-                    <td>1</td>
-                    <td input type="text" id="petName"></td>
-                    </div>
-                <tr>
-                    <td>2</td>
-                    <td input type="number" id="petAge"></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td input type="text" id="petBreed"></td>         
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td input type="text" id="petBreed"></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td input type="text" id="petService"></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td input type="text" id="ownerName"></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td input type="number" id="phoneNumber"></td>
-                </tr>
-               
-
-
-
-                
-
-                </tr>
+            <tbody id="petTable">
+            
             </tbody>
-        
-
+    
         </table>
 
         
@@ -136,7 +106,7 @@
     <footer id="info">
 
     </footer>
-    <script src="/scripts/display.js"></script>
+    <script src="scripts/display.js"></script>
     <script src="scripts/register.js"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ let petSalon={
 }
 
 //constructor
+let c=0
 function Pet(name,age,gender,breed,service,ownersName, contactPhone){
     this.name=name;
     this.age=age;
@@ -23,6 +24,7 @@ function Pet(name,age,gender,breed,service,ownersName, contactPhone){
     this.service=service;
     this.owners=ownersName;
     this.phone=contactPhone;
+    this.id=c++;
 }
 
 function displaySalonInfo(){
@@ -39,6 +41,7 @@ let breedInput=document.getElementById("petBreed");
 let serviceSelect=document.getElementById("petService");
 let ownerInput=document.getElementById("ownerName");
 let phoneInput=document.getElementById("phoneNumber");
+let searchInput=document.getElementById("petSearch");
 
 function isValid(aPet){
     let valid= true;
@@ -62,10 +65,11 @@ function register(){
         petSalon.pets.push(thePet);
         //display the obj in the console
         clearInputs();
-        displayPetCards();
+        displayPetTable();
     }else{
         alert("Please add the required information.");
     }
+    
 }
 
 function clearInputs(){
@@ -76,6 +80,41 @@ function clearInputs(){
     serviceSelect.value="";
 
 }
+
+function deletePet(id){
+    let removeIndex;
+    console.log("delete pet" + id);
+    for(let i = 0; i < petSalon.pets.length; i++){
+        let pet= petSalon.pets[i];
+        if(pet.id==id){
+            removeIndex = i;
+        }
+
+    }
+        petSalon.pets.splice(removeIndex,1);
+        document.getElementById(id).remove();
+
+    
+}
+
+function search(){
+    let searchInput=document.getElementById("petSearch").value;
+    let searchIndex;
+    console.log(searchInput);
+    for(let i = 0; i < petSalon.pets.length; i++){
+        let pet= petSalon.pets[i];
+        if(pet.name==searchInput){
+            searchIndex = i;
+            console.log("I found it!");
+        }
+
+    }
+
+}    
+
+
+
+
 
 function init(){
     console.log("Registering");
@@ -93,7 +132,7 @@ function init(){
     
     petSalon.pets.push(sleepy);
 
-    displayPetCards();
+    displayPetTable();
 
 
 }

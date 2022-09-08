@@ -1,4 +1,4 @@
-function displayPetCards() {
+/*function displayPetCards() {
     const petsDiv = document.getElementById("pets");
 
     petsDiv.innerHTML = ""; //clear the canvas
@@ -29,9 +29,32 @@ function displayPetCards() {
     }
 
 
-}
+}*/
 
 function displayPetTable(){
+
+    const petTable = document.getElementById("petTable");
+    
+    for(let i = 0; i < petSalon.pets.length; i++) {
+        //get the pet
+        let pet=petSalon.pets[i];
+    
     
 
+    let tr =`
+    <tr id="${pet.id}">
+        <td>${pet.name} </td>  
+        <td>${pet.age}</td>
+        <td>${pet.gender}</td>
+        <td>${pet.breed}</td>
+        <td>${pet.service}</td>
+        <td>${pet.ownersName}</td>
+        <td>${pet.phone}</td>
+        <td> <button onclick="deletePet(${pet.id})">🗑️
+        </td>
+    </tr>
+    `;
+petTable.innerHTML += tr;
+    }
+    
 }
