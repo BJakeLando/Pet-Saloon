@@ -32,6 +32,7 @@
 }*/
 
 function displayPetTable(){
+<<<<<<< HEAD
 
     const petTable = document.getElementById("petTable");
     
@@ -40,6 +41,12 @@ function displayPetTable(){
         let pet=petSalon.pets[i];
     
     
+=======
+    const pets2Div = document.getElementById("pets");
+
+    pets2Div.innerHTML = "";
+
+>>>>>>> 43805fac321c20b882ac6cb95e47b6319d42eba3
 
     let tr =`
     <tr id="${pet.id}">
